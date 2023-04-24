@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block title %} Select To Server {% endblock %}
-
+{% block style %}<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">{% endblock %}
 {% block content %}
 <div class="container mt-5">
     <div class="text-center pb-5">Let's Share everything you want and they want</div>
+    <div class="bg-danger text-center p-3 mb-1 alert">{{ msg }}</div>
+    <div class="bg-primary text-center p-3 mb-1 alert">{{ success }}</div>
     <form action="/upload" method="get" class="mb-2">
         <input type="submit" value="UPLOAD" class="form-control">
     </form>

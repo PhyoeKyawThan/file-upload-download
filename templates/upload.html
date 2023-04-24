@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block title %}Upload Your File here{% endblock %}
-
+{% block style %}<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">{% endblock %}
 {% block content %} 
 <div class="container mt-5">
     <div class="font-monospace text-center mb-5 upload-header">Upload Your file and share around the world</div>
+    <div class="bg-danger text-center p-3 mb-1 alert">{{ msg }}</div>
     <form action="/upload" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="fileUpload" class="form-label">Selec A file to Upload</label>
-            <input type="file" name="file" id="fileUpload" class="form-control form-control-lg">
+            <input type="file" name="file" id="fileUpload" class="form-control form-control-lg" required>
         </div>
         <input type="submit" value="Upload" class="mt-2 form-control">
     </form>

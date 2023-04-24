@@ -1,0 +1,27 @@
+input[type=submit]{
+    display: block;
+    width: 100px;   
+    margin-bottom: 50px;
+}
+input[type=submit]:hover{
+    cursor: progress;
+    background-color: black;
+    color: whitesmoke;
+}
+.row .col:first-child{
+    width: 10px;
+}
+
+@media screen and (max-width: 900px){
+
+.name{
+    width: 400px;
+    overflow: scroll;
+}
+
+input[type=submit]{
+    display: block;
+    width: 100px;   
+    margin-bottom: 50px;
+}
+}

@@ -21,3 +21,7 @@ input[type=submit]:hover{
     background-color: whitesmoke;
     color: rgb(42, 29, 54);
 }
+
+.alert:empty{
+    display: none;
+}

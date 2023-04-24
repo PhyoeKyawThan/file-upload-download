@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 {% block title %}Available Files{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.mobile.css') }}">
+{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container mt-5">
+    <h1 class="text-center pb-3 mb-3">Available Files</h1>
     {% for file in files %}
         <div class="row">
-            <div class="col">{{ file }}</div>
+            <div class="col name">{{ file }}</div>
             <div class="col"></div>
             <div class="col">
-                <form action="/download" method="get">
+                <form action="{{ url_for('download', filename=file)}}" method="get">
                     <input type="submit" value="Download" class="form-control form-control-sm">
                 </form>
             </div>
