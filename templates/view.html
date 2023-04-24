@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Available Files{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% for file in files %}
+        <div class="row">
+            <div class="col">{{ file }}</div>
+            <div class="col"></div>
+            <div class="col">
+                <form action="/download" method="get">
+                    <input type="submit" value="Download" class="form-control form-control-sm">
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

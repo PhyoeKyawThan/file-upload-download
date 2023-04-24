@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Select To Server {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center pb-5">Let's Share everything you want and they want</div>
+    <form action="/upload" method="get" class="mb-2">
+        <input type="submit" value="UPLOAD" class="form-control">
+    </form>
+    <form action="/view" method="get">
+        <input type="submit" value="VIEW & DOWNLOAD" class="form-control">
+    </form>
+    
+</div>
+{% endblock %}

@@ -14,29 +14,19 @@ def upload():
     if request.method == 'POST':
         file = request.files['file']
         filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return 'file uploaded'
+        if filename not in os.listdir('files'):
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return 'file uploaded'
+        else:
+            return render_template('index.html', msg = 'File already Exists')
     else:
-        return redirect(url_for('index'))
+        return render_template('upload.html')
 
-@app.route('/view/<filename>', methods=['POST', 'GET'])
-def view_file(filename):
-    if request.method == 'GET':
-        path = f'files/{filename}'
-        return send_file(path, as_attachment=False)
-    else:
-        return 'Something '
-@app.route('/download/<filename>', methods=['POST', 'GET'])
-def download(filename):
-    if request.method == 'GET':
-        # try:
-        #     with open(f'files/{filename}', 'rb') as selectFile:
-        #         fileData = selectFile.read()
-        #     with open(os.getcwd())
-        # except FileNotFoundError as f:
-        #     return 'Requested File not found on the server'
-        path = f'files/{filename}'
-        return send_file(path, as_attachment=False)
+@app.route('/view', methods=['POST', 'GET'])
+def view():
+    data_list = os.listdir('files')
+    return render_template('view.html', files=data_list)    
+    
 
 
 if __name__=='__main__':

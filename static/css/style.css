@@ -1,4 +1,23 @@
+*{
+    color: whitesmoke;
+}
+
 .upload-header{
     font-size: 1.5em;
-    
+}
+
+.container{
+    background-color: saddlebrown;
+    padding: 100px;
+}
+
+input[type=submit]{
+    background-color: antiquewhite;
+    border: none;
+    color: rgb(109, 77, 35);
+}
+
+input[type=submit]:hover{
+    background-color: whitesmoke;
+    color: rgb(42, 29, 54);
 }
