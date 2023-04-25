@@ -12,6 +12,11 @@ input[type=submit]:hover{
     width: 10px;
 }
 
+.name, a{
+    text-decoration: none;
+    color: black;
+
+}
 @media screen and (max-width: 900px){
 
 .name{
